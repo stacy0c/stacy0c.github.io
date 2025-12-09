@@ -10,10 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <!-- Navigation -->
-    <nav class="navbar">
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
         <div class="container">
-            <div class="nav-brand">Stacy Chen</div>
+            <a href="#" class="nav-brand">Stacy Chen</a>
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#research" class="nav-link">Research</a></li>
@@ -35,37 +36,38 @@
             <div class="hero-content">
                 <h1 class="hero-title">Stacy Chen</h1>
                 <p class="hero-subtitle">PhD Candidate | Health Policy (Organizations and Management)</p>
-                <p class="hero-description">Researching health equity, immigrant-inclusive policies, and the impact of Medicaid expansion on health outcomes and economic well-being.</p>
+                <p class="hero-description">Researching how healthcare organizations configure and deliver services to improve health equity, with a focus on language services, organizational responses to policy, and value-based care models.</p>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
+    <main id="main-content">
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About</h2>
             <div class="about-content">
                 <div class="about-wrapper">
-                    <div class="about-image">
-                        <img src="picture_of_me.png" alt="Stacy Chen">
-                    </div>
                     <div class="about-text">
                         <p>
                             I am a PhD candidate in Health Policy (Organizations and Management) at the University of California, Berkeley, 
-                            expected to graduate in 2027. My research examines how health policies affect health equity, with a particular 
-                            focus on immigrant-inclusive policies, Medicaid expansion, and primary care practice capabilities for patients 
-                            with limited English proficiency.
+                            expected to graduate in 2027. My research examines how healthcare organizations configure and deliver services 
+                            to improve health equity, with a particular focus on language services for limited English proficient patients, 
+                            organizational responses to policy changes, and the role of value-based care models in shaping service delivery.
                         </p>
                         <p>
                             My work combines rigorous quantitative methods—including machine learning, mediation analysis, and econometric 
-                            approaches—with qualitative stakeholder interviews and community-based participatory research. I am particularly 
-                            interested in understanding how policy interventions can reduce health disparities and improve access to care 
-                            for underserved populations, including immigrants and their families.
+                            approaches to understand how hospitals, health systems, and primary care practices organize and configure 
+                         services to improve health care quality. My dissertation will focus on understanding how organizational structures, 
+                            strategic priorities, and policy environments influence the availability, configuration, and stability of language services 
+                             across hospitals and its impact on patient hospital safety and use of preventive care.
                         </p>
                         <p>
-                            I am currently on the academic job market and seeking tenure-track faculty positions and research opportunities 
-                            that allow me to continue advancing health equity through evidence-based policy research.
+                            I am currently working on my dissertation and exploring research opportunities in the field of health policy.
                         </p>
+                    </div>
+                    <div class="about-image">
+                        <img src="picture_of_me.png" alt="Stacy Chen">
                     </div>
                 </div>
             </div>
@@ -78,20 +80,24 @@
             <h2 class="section-title">Research Interests</h2>
             <div class="research-grid">
                 <div class="research-card">
-                    <h3>Immigrant Health & Equity</h3>
-                    <p>Evaluating the impact of immigrant-inclusive health policies on equitable access to care, including cancer screening and healthcare utilization among mixed-citizenship households.</p>
+                    <h3>Organizational Configuration of Language Services</h3>
+                    <p>Examining how hospitals and health systems configure language services—locally, centrally, or through outsourcing—and how organizational changes like acquisitions and consolidation affect service availability and stability.</p>
                 </div>
                 <div class="research-card">
-                    <h3>Medicaid Expansion</h3>
-                    <p>Examining how Medicaid expansion affects health outcomes and economic well-being, including income effects among newly eligible adults.</p>
+                    <h3>State Policy & Organizational Response</h3>
+                    <p>Evaluating how state-level Medicaid language service reimbursement policies affect organizational service delivery and preventive care uptake among limited English proficient patients.</p>
                 </div>
                 <div class="research-card">
-                    <h3>Primary Care Capabilities</h3>
-                    <p>Investigating primary care practice capabilities linked to language services for patients with limited English proficiency and equity of care by race and ethnicity.</p>
+                    <h3>Primary Care Practice Capabilities</h3>
+                    <p>Investigating primary care practice capabilities linked to language services for patients with limited English proficiency, examining how organizational structures and resources shape equitable care delivery for diverse patient populations.</p>
                 </div>
                 <div class="research-card">
-                    <h3>Pay-for-Equity Models</h3>
-                    <p>Studying alternative quality contracts and financial incentives designed to improve equity of care quality and reduce racial and ethnic disparities in healthcare delivery.</p>
+                    <h3>Health Inequities & Immigrant Populations</h3>
+                    <p>Examining healthcare access and health equity for immigrant populations, including mixed-citizenship households and unaccompanied migrant children.</p>
+                </div>
+                <div class="research-card">
+                    <h3>Income and Income Mobility</h3>
+                    <p>Investigating how policy interventions, including Medicaid expansion, affect income and economic well-being among low-income populations, building on work examining income effects and leveraging census and administrative data to understand economic mobility.</p>
                 </div>
             </div>
         </div>
@@ -169,12 +175,12 @@
                     <h3>Conference Presentations</h3>
                     <ul>
                         <li>
-                            <strong>Medicaid Expansion Increased Income...</strong><br>
+                            <strong>Medicaid Expansion Increased Income Among Newly Eligible Adults</strong><br>
                             Chen, S., Staiger, B.<br>
                             <em>American Society of Health Economists</em>, 2025
                         </li>
                         <li>
-                            <strong>Mixed Citizenship Households...</strong><br>
+                            <strong>Mixed Citizenship Households and Healthcare Access: Implications for Immigrant Health Equity</strong><br>
                             Chen, S., Guadamuz, J.<br>
                             <em>Academy Health Annual Research Conference</em>, 2024
                         </li>
@@ -236,6 +242,7 @@
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
