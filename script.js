@@ -1,63 +1,55 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            const navMenu = document.getElementById('navMenu');
-            const navToggle = document.getElementById('navToggle');
-            if (navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-            }
+// Tab functionality
+document.addEventListener('DOMContentLoaded', () => {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    const navLinks = document.querySelectorAll('.nav-link[data-tab-link]');
+
+    function switchTab(tabName) {
+        // Update tab buttons
+        tabButtons.forEach(button => {
+            const isActive = button.getAttribute('data-tab') === tabName;
+            button.classList.toggle('active', isActive);
+            button.setAttribute('aria-selected', isActive);
+        });
+
+        // Update tab panels
+        tabPanels.forEach(panel => {
+            const isActive = panel.id === `${tabName}-panel`;
+            panel.classList.toggle('active', isActive);
+        });
+
+        // Update URL hash without scrolling
+        if (history.pushState) {
+            history.pushState(null, null, `#${tabName}`);
         }
+    }
+
+    // Tab button clicks
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const tabName = button.getAttribute('data-tab');
+            switchTab(tabName);
+        });
     });
-});
 
-// Mobile menu toggle
-const navToggle = document.getElementById('navToggle');
-const navMenu = document.getElementById('navMenu');
+    // Navigation link clicks (if nav links exist)
+    if (navLinks.length > 0) {
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tabName = link.getAttribute('data-tab-link');
+                switchTab(tabName);
+            });
+        });
+    }
 
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-});
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
+    // Handle initial hash
+    const hash = window.location.hash.substring(1);
+    if (hash && ['about', 'research', 'publications', 'cv', 'contact'].includes(hash)) {
+        switchTab(hash);
     }
 });
 
-// Highlight active navigation link on scroll
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
-
-window.addEventListener('scroll', () => {
-    let current = '';
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        if (window.pageYOffset >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
 
 // Add fade-in animation on scroll
 const observerOptions = {
