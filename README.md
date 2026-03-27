@@ -131,5 +131,4 @@ Built with modern web technologies:
 
 ---
 
-**Good luck on the job market!** 🎓
 
