@@ -3,253 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stacy Chen - Health Policy Researcher</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Stacy Chen – Health Policy Researcher</title>
+    <meta name="description" content="Stacy Chen is a PhD candidate in Health Policy & Management at UC Berkeley studying healthcare organizations, language services, and health equity.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Main Content -->
-    <main id="main-content">
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Stacy Chen</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"        class="nav-link">About</a></li>
+                <li><a href="research.html"     class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="cv.html"           class="nav-link">CV</a></li>
+                <li><a href="contact.html"      class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Terracotta hero color block -->
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">Stacy Chen</h1>
-                <p class="hero-subtitle">Health Policy Researcher<br>Organizations and Management</p>
+                <div class="hero-text">
+                    <h1 class="hero-title">Stacy Chen</h1>
+                    <p class="hero-subtitle">PhD Candidate in Health Policy &amp; Management</p>
+                    <p class="hero-institution">University of California, Berkeley &nbsp;·&nbsp; Division of Health Policy and Management</p>
+                    <p class="hero-tagline">I study how healthcare organizations configure and deliver services to improve health equity, with a focus on language access for limited English proficient patients.</p>
+                    <div class="hero-links">
+                        <a href="https://scholar.google.com/citations?user=BwQoNZEAAAAJ&hl=en" class="hero-link" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+                            Google Scholar
+                        </a>
+                        <a href="https://www.linkedin.com/in/stacychen01" class="hero-link" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                            LinkedIn
+                        </a>
+                        <a href="https://champ.berkeley.edu/team/trainees" class="hero-link" target="_blank" rel="noopener noreferrer">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            CHAMP Profile
+                        </a>
+                        <a href="mailto:stacy_chen@berkeley.edu" class="hero-link">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Email
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="picture_of_me.png" alt="Stacy Chen" class="profile-photo">
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="tabs-section">
+    <!-- About content -->
+    <main class="main-content">
         <div class="container">
-            <div class="tabs-container">
-                <div class="tabs-nav" role="tablist">
-                    <button class="tab-button active" data-tab="about" role="tab" aria-selected="true" aria-controls="about-panel">About</button>
-                    <button class="tab-button" data-tab="research" role="tab" aria-selected="false" aria-controls="research-panel">Research</button>
-                    <button class="tab-button" data-tab="publications" role="tab" aria-selected="false" aria-controls="publications-panel">Publications</button>
-                    <button class="tab-button" data-tab="cv" role="tab" aria-selected="false" aria-controls="cv-panel">CV</button>
-                    <button class="tab-button" data-tab="contact" role="tab" aria-selected="false" aria-controls="contact-panel">Contact</button>
+            <div class="about-grid">
+                <div class="about-body">
+                    <span class="section-label" style="color: var(--terra);">About</span>
+                    <p>I am a PhD candidate in Health Policy (Organizations and Management) at the University of California, Berkeley, expected to graduate in 2027. I study how healthcare organizations configure and deliver services to improve health equity, with a particular focus on language services for limited English proficient patients, organizational responses to policy changes, and the role of value-based care models in shaping service delivery. I am also interested in economic well-being and income mobility, and how access to health insurance—including Medicaid expansion—affects economic well-being among low-income populations.</p>
+                    <p>I use quantitative research methods, including machine learning, causal inference, and econometric approaches, to understand how organizational factors shape equitable care delivery. My dissertation examines how healthcare organizations' structures and policy environments influence the availability, configuration, and stability of language services and their impact on patient safety and use of preventive care.</p>
+                    <p>Prior to graduate school, I worked as a health economist at the MITRE Corporation supporting government-funded research and development projects, including work on income mobility using Census data and optimizing virtual care for federally-qualified health centers (FQHCs) through HRSA. I hold an MPH in Biostatistics &amp; Epidemiology and a BA in Economics from Tufts University.</p>
                 </div>
 
-                <div class="tabs-content">
-                    <div id="about-panel" class="tab-panel active" role="tabpanel">
-                        <div class="content-wrapper">
-                            <div class="content-image">
-                                <img src="picture_of_me.png" alt="Stacy Chen">
-                            </div>
-                            <div class="content-text">
-                                <p>
-                                    I am a PhD candidate in Health Policy (Organizations and Management) at the University of California, Berkeley, 
-                                    expected to graduate in 2027. I study how healthcare 
-                                    organizations configure and deliver services to improve health equity, with a particular focus on language services 
-                                    for limited English proficient patients, organizational responses to policy changes, and the role of value-based care 
-                                    models in shaping service delivery. I am also intersted in economic well-being and income mobility, and how access to health insurance, 
-                                    including Medicaid expansion, affects economic well-being among low-income populations.
-                                </p>
-                                <p>
-                                    I use quantitative research methods, including machine learning, causal inference, and econometric 
-                                    approaches, to understand how organizational factors shape equitable care delivery. My dissertation project examines how healthcare oragnizations confirgure
-                                    structures and policy environments influence the availability, configuration, and stability of 
-                                    language services and their impact on patient safety and use of preventive care.
-                                </p>
-                                <p>
-                                    
-                                    Prior to graduate school, I worked as a health care researcher at the MITRE Corporation supporting government-funded 
-                                    research and development projects such as income mobility in Census and optimizing virtual care for federally-qualified 
-                                    health centers (FQHCS) in HRSA. I received an MPH and BA in economics from Tufts University.
-                                </p>
-                                <p>
-                                    To learn more about my research, check out my <a href="https://scholar.google.com/citations?user=BwQoNZEAAAAJ&hl=en" target="_blank">Google Scholar</a> profile, 
-                                    or visit my <a href="https://champ.berkeley.edu/team/trainees" target="_blank">CHAMP profile</a>.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="research-panel" class="tab-panel" role="tabpanel">
-                        <div class="research-content">
-                            <p class="research-intro">
-                                My research interests center on understanding how healthcare organizations configure and deliver services to improve 
-                                health equity, with particular focus on:
-                            </p>
-                            <div class="research-grid">
-                                <div class="research-card">
-                                    <div class="research-card-header">
-                                        <div class="research-icon">🏥</div>
-                                        <h3>Organizational Configuration of Language Services</h3>
-                                    </div>
-                                    <p>Examining how hospitals and health systems configure language services—locally, centrally, or through outsourcing—and how organizational changes like acquisitions and consolidation affect service availability and stability.</p>
-                                </div>
-                                <div class="research-card">
-                                    <div class="research-card-header">
-                                        <div class="research-icon">📋</div>
-                                        <h3>State Policy & Organizational Response</h3>
-                                    </div>
-                                    <p>Evaluating how state-level Medicaid language service reimbursement policies affect organizational service delivery and preventive care uptake among limited English proficient patients.</p>
-                                </div>
-                                <div class="research-card">
-                                    <div class="research-card-header">
-                                        <div class="research-icon">⚕️</div>
-                                        <h3>Primary Care Practice Capabilities</h3>
-                                    </div>
-                                    <p>Investigating primary care practice capabilities linked to language services for patients with limited English proficiency, examining how organizational structures and resources shape equitable care delivery for diverse patient populations.</p>
-                                </div>
-                                <div class="research-card">
-                                    <div class="research-card-header">
-                                        <div class="research-icon">🌍</div>
-                                        <h3>Health Inequities & Immigrant Populations</h3>
-                                    </div>
-                                    <p>Examining healthcare access and health equity for immigrant populations, including mixed-citizenship households and unaccompanied migrant children.</p>
-                                </div>
-                                <div class="research-card">
-                                    <div class="research-card-header">
-                                        <div class="research-icon">📈</div>
-                                        <h3>Income and Income Mobility</h3>
-                                    </div>
-                                    <p>Investigating how policy interventions, including Medicaid expansion, affect income and economic well-being among low-income populations, building on work examining income effects and leveraging census and administrative data to understand economic mobility.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="publications-panel" class="tab-panel" role="tabpanel">
-                        <div class="publications-list">
-                            <div class="publication-item">
-                                <h3>Journal Publications</h3>
-                                <ul>
-                                    <li>
-                                        <strong>U.S. Primary Care Practice Capabilities Linked to Language Services for Patients with Limited English Proficiency</strong><br>
-                                        Chen, S., Guadamuz, J. S., Rodriguez, H. P., & Schifferdecker, K. E.<br>
-                                        <em>Journal of General Internal Medicine</em>, 2025<br>
-                                        <span class="publication-links">
-                                            <a href="https://doi.org/10.1007/s11606-025-09968-8" target="_blank">DOI</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <strong>Medicaid expansion increased income among newly eligible adults</strong><br>
-                                        Chen, S., & Staiger, B.<br>
-                                        <em>Health Affairs Scholar</em>, 3(5), qxaf091, 2025<br>
-                                        <span class="publication-links">
-                                            <a href="https://doi.org/10.1093/haschl/qxaf091" target="_blank">DOI</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <strong>Launching Financial Incentives for Physician Groups to Improve Equity of Care by Patient Race and Ethnicity</strong><br>
-                                        Rodriguez, H. P., Epstein, S. D., Brewster, A. L., Brown, T. T., Chen, S., & Bibi, S.<br>
-                                        <em>The Milbank Quarterly</em>, 102(4), 944-972, 2024<br>
-                                        <span class="publication-links">
-                                            <a href="https://doi.org/10.1111/1468-0009.12720" target="_blank">DOI</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <strong>Accountable care organization changes in equity of ambulatory care quality by patient race and ethnicity, 2019-2022</strong><br>
-                                        Rodriguez, H. P., Xu, S., Brewster, A. L., Brown, T. T., Chen, S., & Epstein, S. D.<br>
-                                        <em>Health Affairs Scholar</em>, 2(12), qxae155, 2024<br>
-                                        <span class="publication-links">
-                                            <a href="https://doi.org/10.1093/haschl/qxae155" target="_blank">DOI</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <strong>Mental health symptoms and association with COVID-19 vaccination receipt and intention to vaccinate among adults, United States</strong><br>
-                                        Nguyen, K., Chen, S., Morris, K., Chui, K., Allen, J.<br>
-                                        <em>Preventive Medicine</em>, vol. 154, 2021<br>
-                                        <span class="publication-links">
-                                            <a href="https://doi.org/10.1016/j.ypmed.2021.106905" target="_blank">DOI</a>
-                                        </span>
-                                    </li>
-                                    <li>
-                                        <strong>Understanding Health Priorities, Behaviors, and Service Utilization Among Brazilian Immigrant Women: Implications for Designing Community-Based Interventions</strong><br>
-                                        Priebe Rocha, L., Soares, C., McGregor, A., Chen, S., Kaplan, A., Rose, R. R., Galvão, H., Siqueira, C. E., & Allen, J. D.<br>
-                                        <em>Journal of racial and ethnic health disparities</em>, 9(1), 135-145, 2021<br>
-                                        <span class="publication-links">
-                                            <a href="https://doi.org/10.1007/s40615-020-00936-y" target="_blank">DOI</a>
-                                        </span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="publication-item">
-                                <h3>Technical Papers</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Federated Approaches to Observational Research-Technical Considerations</strong><br>
-                                        Chen, S., Rajput, Z., and Persing, N.<br>
-                                        <em>MITRE Engenuity Technical Report</em>, 2022
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="publication-item">
-                                <h3>Conference Presentations</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Medicaid Expansion Increased Income Among Newly Eligible Adults</strong><br>
-                                        Chen, S., Staiger, B.<br>
-                                        <em>American Society of Health Economists</em>, 2025
-                                    </li>
-                                    <li>
-                                        <strong>Mixed Citizenship Households and Healthcare Access: Implications for Immigrant Health Equity</strong><br>
-                                        Chen, S., Guadamuz, J.<br>
-                                        <em>Academy Health Annual Research Conference</em>, 2024
-                                    </li>
-                                    <li>
-                                        <strong>A Multi-Factored Mechanism to Distribute Health Emergency Funds</strong><br>
-                                        Chen, S., Qin, H., Champney, T., Hartman, R., Menon, S., Munro, M., Quach, Y.<br>
-                                        <em>Federal Committee on Statistical Methodology (FCSM)</em>, 2023
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="publication-item">
-                                <h3>Conference Posters</h3>
-                                <ul>
-                                    <li>
-                                        <strong>Association of Child and Parental Citizenship Status on Healthcare Access, 2010-2022</strong><br>
-                                        Chen, S., Guadamuz, J.<br>
-                                        <em>Academy Health Annual Research Conference</em>, 2024
-                                    </li>
-                                    <li>
-                                        <strong>Future Intentions to Quit and Access to Cessation Resources among Smokers in Low-Income Housing</strong><br>
-                                        Chen, S., Liu, J., Davine, J., Lee, R., Geller, A., Rees, V.<br>
-                                        <em>Society for Research on Nicotine and Tobacco (SRNT)</em>, 2021
-                                    </li>
-                                    <li>
-                                        <strong>Perceptions and Use of E-Cigarettes as a Cessation Strategy Among Smokers in Low-Income Housing</strong><br>
-                                        Liu, J., Chen, S., Davine, J., Lee, R., Geller, A., Rees, V.<br>
-                                        <em>Society for Research on Nicotine and Tobacco (SRNT)</em>, 2021
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="cv-panel" class="tab-panel" role="tabpanel">
-                        <div class="cv-content">
-                            <p><a href="Stacy_Chen_CV.pdf" target="_blank">Download CV (PDF)</a></p>
-                        </div>
-                    </div>
-
-                    <div id="contact-panel" class="tab-panel" role="tabpanel">
-                        <div class="contact-content">
-                            <p><strong>Email:</strong> <a href="mailto:stacy_chen@berkeley.edu">stacy_chen@berkeley.edu</a></p>
-                            <p><strong>Institution:</strong> University of California, Berkeley<br>Division of Health Policy and Management</p>
-                            <p><strong>Location:</strong> Berkeley, CA</p>
-                            <p><a href="https://www.linkedin.com/in/stacychen01" target="_blank">LinkedIn</a></p>
-                            <p><a href="https://champ.berkeley.edu/team/trainees" target="_blank">CHAMP Profile</a></p>
-                            <p><a href="https://scholar.google.com/citations?user=BwQoNZEAAAAJ&hl=en" target="_blank">Google Scholar</a></p>
-                        </div>
+                <div class="about-sidebar">
+                    <div class="sidebar-block">
+                        <h3>Education</h3>
+                        <ul class="sidebar-list">
+                            <li><strong>Ph.D. Health Policy &amp; Management</strong><br>UC Berkeley &nbsp;·&nbsp; Expected 2027</li>
+                            <li><strong>MPH, Biostatistics &amp; Epidemiology</strong><br>Tufts University &nbsp;·&nbsp; 2021</li>
+                            <li><strong>BA, Economics &amp; Community Health</strong><br>Tufts University &nbsp;·&nbsp; 2020</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Stacy Chen. All rights reserved.</p>
+            <p>&copy; 2026 Stacy Chen &nbsp;·&nbsp; <a href="mailto:stacy_chen@berkeley.edu">stacy_chen@berkeley.edu</a></p>
         </div>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
-

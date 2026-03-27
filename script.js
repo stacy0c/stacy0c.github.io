@@ -1,79 +1,83 @@
-// Tab functionality
-document.addEventListener('DOMContentLoaded', () => {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const tabPanels = document.querySelectorAll('.tab-panel');
-    const navLinks = document.querySelectorAll('.nav-link[data-tab-link]');
+// ============================================================
+//  Stacy Chen – Academic Website Script
+// ============================================================
 
-    function switchTab(tabName) {
-        // Update tab buttons
-        tabButtons.forEach(button => {
-            const isActive = button.getAttribute('data-tab') === tabName;
-            button.classList.toggle('active', isActive);
-            button.setAttribute('aria-selected', isActive);
-        });
+// ---------- Mobile nav toggle ----------
+const navToggle = document.getElementById('navToggle');
+const navMenu   = document.getElementById('navMenu');
 
-        // Update tab panels
-        tabPanels.forEach(panel => {
-            const isActive = panel.id === `${tabName}-panel`;
-            panel.classList.toggle('active', isActive);
-        });
-
-        // Update URL hash without scrolling
-        if (history.pushState) {
-            history.pushState(null, null, `#${tabName}`);
-        }
-    }
-
-    // Tab button clicks
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const tabName = button.getAttribute('data-tab');
-            switchTab(tabName);
-        });
-    });
-
-    // Navigation link clicks (if nav links exist)
-    if (navLinks.length > 0) {
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const tabName = link.getAttribute('data-tab-link');
-                switchTab(tabName);
-            });
-        });
-    }
-
-    // Handle initial hash
-    const hash = window.location.hash.substring(1);
-    if (hash && ['about', 'research', 'publications', 'cv', 'contact'].includes(hash)) {
-        switchTab(hash);
-    }
+navToggle?.addEventListener('click', () => {
+    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
+    navToggle.setAttribute('aria-expanded', String(!expanded));
+    navToggle.classList.toggle('active');
+    navMenu.classList.toggle('active');
 });
 
-
-// Add fade-in animation on scroll
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe elements for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.research-card, .publication-item, .about-text');
-    animatedElements.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
+document.querySelectorAll('.nav-link').forEach(link => {
+    link.addEventListener('click', () => {
+        navToggle?.setAttribute('aria-expanded', 'false');
+        navToggle?.classList.remove('active');
+        navMenu?.classList.remove('active');
     });
 });
 
+// ---------- Active nav link based on current page ----------
+(function setActiveNav() {
+    const path     = window.location.pathname.replace(/\/$/, '');
+    const page     = path.split('/').pop() || 'index.html';
+
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const href     = link.getAttribute('href') || '';
+        const linkPage = href.split('/').pop();
+        const isHome   = (page === '' || page === 'index.html') &&
+                         (linkPage === 'index.html' || linkPage === '');
+        if (isHome || linkPage === page) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'page');
+        }
+    });
+})();
+
+// ---------- Research interest accordion ----------
+document.querySelectorAll('.ri-card').forEach(card => {
+    card.addEventListener('click', () => {
+        const area   = card.dataset.area;
+        const panel  = document.getElementById('expand-' + area);
+        if (!panel) return;
+
+        const isOpen = !panel.hidden;
+
+        // Close all other panels first
+        document.querySelectorAll('.ri-expand').forEach(p => {
+            p.hidden = true;
+        });
+        document.querySelectorAll('.ri-card').forEach(c => {
+            c.classList.remove('is-open');
+            c.setAttribute('aria-expanded', 'false');
+        });
+
+        // Toggle the clicked one
+        if (!isOpen) {
+            panel.hidden = false;
+            card.classList.add('is-open');
+            card.setAttribute('aria-expanded', 'true');
+
+            // Smooth scroll so panel is visible
+            setTimeout(() => {
+                panel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }, 30);
+        }
+    });
+
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.setAttribute('aria-expanded', 'false');
+
+    // Keyboard support
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
+        }
+    });
+});

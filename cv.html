@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV – Stacy Chen</title>
+    <meta name="description" content="Curriculum Vitae of Stacy Chen, PhD candidate in Health Policy & Management at UC Berkeley.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">Stacy Chen</a>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"        class="nav-link">About</a></li>
+                <li><a href="research.html"     class="nav-link">Research</a></li>
+                <li><a href="publications.html" class="nav-link">Publications</a></li>
+                <li><a href="cv.html"           class="nav-link">CV</a></li>
+                <li><a href="contact.html"      class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <span class="section-label">Curriculum Vitae</span>
+            <h1 class="page-title">CV</h1>
+            <p class="page-subtitle">Download a PDF copy or view inline below</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="cv-actions">
+                <a href="Stacy_Chen_CV.pdf" download class="btn btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download CV (PDF)
+                </a>
+            </div>
+            <div class="cv-embed-wrapper">
+                <embed src="Stacy_Chen_CV.pdf" type="application/pdf" class="cv-embed" title="Stacy Chen CV">
+                <div class="cv-fallback">
+                    <p>Your browser does not support embedded PDFs. <a href="Stacy_Chen_CV.pdf">Click here to download.</a></p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Stacy Chen &nbsp;·&nbsp; <a href="mailto:stacy_chen@berkeley.edu">stacy_chen@berkeley.edu</a></p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
